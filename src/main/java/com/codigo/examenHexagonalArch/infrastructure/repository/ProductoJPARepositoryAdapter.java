@@ -32,6 +32,7 @@ public class ProductoJPARepositoryAdapter implements ProductoOut {
     @Override
     public Optional<Producto> updateProducto(Long id, Producto producto) {
         if (productoJPARepository.existsById(id)) {
+            producto.setProducto_id(id);
             ProductoEntity productoEntity = ProductoEntity.fromDomainModel(producto);
             return Optional.of(productoJPARepository.save(productoEntity).toDomainModel());
         }
