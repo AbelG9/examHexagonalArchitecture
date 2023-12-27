@@ -26,8 +26,7 @@ public class ProductoJPARepositoryAdapter implements ProductoOut {
     @Override
     public List<Producto> getProductos() {
         List<Producto> productos = new ArrayList<>();
-        List<ProductoEntity> listProductoEntity = productoJPARepository.findAll();
-        listProductoEntity.forEach(product -> {
+        productoJPARepository.findAll().forEach(product -> {
             productos.add(product.toDomainModel());
         });
         return productos;
