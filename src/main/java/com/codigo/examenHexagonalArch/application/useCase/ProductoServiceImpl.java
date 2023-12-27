@@ -3,8 +3,8 @@ package com.codigo.examenHexagonalArch.application.useCase;
 import com.codigo.examenHexagonalArch.domain.models.Producto;
 import com.codigo.examenHexagonalArch.domain.ports.in.ProductoIn;
 import com.codigo.examenHexagonalArch.domain.ports.out.ProductoOut;
-import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ProductoServiceImpl implements ProductoIn {
@@ -17,6 +17,11 @@ public class ProductoServiceImpl implements ProductoIn {
     @Override
     public Producto crearProducto(Producto producto) {
         return productoOut.createProducto(producto);
+    }
+
+    @Override
+    public List<Producto> obtenerProductos() {
+        return productoOut.getProductos();
     }
 
     @Override

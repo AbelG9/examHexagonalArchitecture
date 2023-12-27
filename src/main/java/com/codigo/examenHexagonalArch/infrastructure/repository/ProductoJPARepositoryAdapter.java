@@ -5,6 +5,8 @@ import com.codigo.examenHexagonalArch.domain.ports.out.ProductoOut;
 import com.codigo.examenHexagonalArch.infrastructure.entity.ProductoEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -19,6 +21,16 @@ public class ProductoJPARepositoryAdapter implements ProductoOut {
     public Producto createProducto(Producto producto) {
         ProductoEntity productoEntity = ProductoEntity.fromDomainModel(producto);
         return productoJPARepository.save(productoEntity).toDomainModel();
+    }
+
+    @Override
+    public List<Producto> getProductos() {
+        List<Producto> productos = new ArrayList<>();
+        List<ProductoEntity> listProductoEntity = productoJPARepository.findAll();
+        listProductoEntity.forEach(product -> {
+            productos.add(product.toDomainModel());
+        });
+        return productos;
     }
 
     @Override

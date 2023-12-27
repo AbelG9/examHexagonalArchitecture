@@ -2,8 +2,8 @@ package com.codigo.examenHexagonalArch.application.service;
 
 import com.codigo.examenHexagonalArch.domain.models.Producto;
 import com.codigo.examenHexagonalArch.domain.ports.in.ProductoIn;
-import com.codigo.examenHexagonalArch.domain.ports.out.ProductoOut;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ProductoService implements ProductoIn {
@@ -15,6 +15,11 @@ public class ProductoService implements ProductoIn {
     @Override
     public Producto crearProducto(Producto producto) {
         return productoIn.crearProducto(producto);
+    }
+
+    @Override
+    public List<Producto> obtenerProductos() {
+        return productoIn.obtenerProductos();
     }
 
     @Override

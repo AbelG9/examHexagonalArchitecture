@@ -2,7 +2,6 @@ package com.codigo.examenHexagonalArch.infrastructure.entity;
 
 import com.codigo.examenHexagonalArch.domain.models.Producto;
 import jakarta.persistence.*;
-import jdk.jfr.Enabled;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
