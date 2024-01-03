@@ -1,6 +1,7 @@
 package com.codigo.examenHexagonalArch.infrastructure.entity;
 
 import com.codigo.examenHexagonalArch.domain.models.FacturaDetalle;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class FacturaDetalleEntity {
     private Long detalle_id;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "factura_id")
     private FacturaCabeceraEntity facturaCabecera;
 
