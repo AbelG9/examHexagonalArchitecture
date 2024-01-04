@@ -3,7 +3,6 @@ package com.codigo.examenHexagonalArch.infrastructure.controller;
 import com.codigo.examenHexagonalArch.application.service.FacturaCabeceraService;
 import com.codigo.examenHexagonalArch.domain.models.FacturaCabecera;
 import com.codigo.examenHexagonalArch.domain.models.Producto;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

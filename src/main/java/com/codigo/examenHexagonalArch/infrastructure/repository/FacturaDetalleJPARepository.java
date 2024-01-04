@@ -1,6 +1,5 @@
 package com.codigo.examenHexagonalArch.infrastructure.repository;
 
-import com.codigo.examenHexagonalArch.domain.ports.in.FacturaDetalleIn;
 import com.codigo.examenHexagonalArch.infrastructure.entity.FacturaDetalleEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 

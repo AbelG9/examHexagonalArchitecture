@@ -2,11 +2,12 @@ package com.codigo.examenHexagonalArch.infrastructure.entity;
 
 import com.codigo.examenHexagonalArch.domain.models.FacturaDetalle;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Getter

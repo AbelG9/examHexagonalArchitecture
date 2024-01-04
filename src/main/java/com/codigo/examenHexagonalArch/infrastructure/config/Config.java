@@ -10,11 +10,15 @@ import com.codigo.examenHexagonalArch.domain.ports.out.FacturaCabeceraOut;
 import com.codigo.examenHexagonalArch.domain.ports.out.FacturaDetalleOut;
 import com.codigo.examenHexagonalArch.domain.ports.out.ProductoOut;
 import com.codigo.examenHexagonalArch.infrastructure.repository.FacturaCabeceraJPARepositoryAdapter;
-import com.codigo.examenHexagonalArch.infrastructure.repository.FacturaDetalleJPARepository;
 import com.codigo.examenHexagonalArch.infrastructure.repository.FacturaDetalleJPARepositoryAdapter;
 import com.codigo.examenHexagonalArch.infrastructure.repository.ProductoJPARepositoryAdapter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class Config {
@@ -46,5 +50,12 @@ public class Config {
     @Bean
     public FacturaDetalleOut facturaDetalleOut(FacturaDetalleJPARepositoryAdapter facturaDetalleJPARepositoryAdapter) {
         return facturaDetalleJPARepositoryAdapter;
+    }
+
+    @Bean
+    Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2).select()
+                .apis(RequestHandlerSelectors.withClassAnnotation(RestController.class)).paths(PathSelectors.any())
+                .build();
     }
 }
